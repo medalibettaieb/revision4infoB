@@ -55,6 +55,7 @@ public class UniversityServices implements UniversityServicesRemote {
 	@Override
 	public void createMark(Student student, Module module, Date dateOfExam,
 			String type, int mark) {
+
 		Mark mark1 = new Mark(type, mark, student, module, dateOfExam);
 		entityManager.persist(mark1);
 
@@ -65,6 +66,41 @@ public class UniversityServices implements UniversityServicesRemote {
 		String jpql = "select stu from Mark mar ,Module mod  join mar.student stu join mar.module mod  where :pro member of mod.profs ";
 		Query query = entityManager.createQuery(jpql);
 		return query.getResultList();
+	}
+
+	@Override
+	public void deleteStudent(int idStudent) {
+		entityManager.remove(entityManager.find(Student.class, idStudent));
+
+	}
+
+	@Override
+	public void deleteProf(int idProf) {
+		entityManager.remove(entityManager.find(Prof.class, idProf));
+
+	}
+
+	@Override
+	public void deleteModule(int idModule) {
+		entityManager.remove(entityManager.find(Module.class, idModule));
+
+	}
+
+	@Override
+	public List<Prof> findAllProfByStudent(Student student) {
+		String jpql = "select p from Prof p join p.module mod join mod.marks mark where mark.student =:s";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("s", student);
+		return query.getResultList();
+	}
+
+	/* (non-Javadoc)
+	 * @see services.UniversityServicesRemote#findstudentById(int)
+	 */
+	@Override
+	public Student findstudentById(int idStudent) {
+
+		return entityManager.find(Student.class, idStudent);
 	}
 
 }

@@ -29,7 +29,6 @@ public class Module implements Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdModule() {
 		return this.idModule;
 	}

@@ -27,7 +27,6 @@ public class Student implements Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdStudent() {
 		return this.idStudent;
 	}

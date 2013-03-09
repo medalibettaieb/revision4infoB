@@ -3,6 +3,7 @@ package persistence;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -84,7 +85,8 @@ public class Mark implements Serializable {
 		this.mark = mark;
 		this.student = student;
 		this.module = module;
-		this.markPk = new MarkPk(student.getIdStudent(), module.getIdModule(),dateOfExam);
+		this.markPk = new MarkPk(student.getIdStudent(), module.getIdModule(),
+				dateOfExam);
 	}
 
 }

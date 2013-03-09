@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Embeddable
 public class MarkPk implements Serializable {
@@ -63,6 +65,7 @@ public class MarkPk implements Serializable {
 		this.idMod = idMod;
 	}
 
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getIdDate() {
 		return idDate;
 	}

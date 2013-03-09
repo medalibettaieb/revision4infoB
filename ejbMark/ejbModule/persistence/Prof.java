@@ -52,4 +52,10 @@ public class Prof implements Serializable {
 		this.module = module;
 	}
 
+	@Override
+	public String toString() {
+		return "Prof [idProf=" + idProf + ", nameProf=" + nameProf
+				+ ", module=" + module + "]";
+	}
+
 }

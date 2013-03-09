@@ -18,9 +18,20 @@ public interface UniversityServicesRemote {
 
 	void addProf(Prof prof);
 
+	void deleteStudent(int idStudent);
+
+	void deleteProf(int idProf);
+
+	void deleteModule(int idModule);
+
+	Student findstudentById(int idStudent);
+
 	void assignProfsToModule(List<Prof> profs, Module module);
 
-	void createMark(Student student, Module module, Date dateOfExam, String type,int mark);
+	void createMark(Student student, Module module, Date dateOfExam,
+			String type, int mark);
 
 	List<Student> findAllStudentByProf(Prof prof);
+
+	List<Prof> findAllProfByStudent(Student student);
 }
