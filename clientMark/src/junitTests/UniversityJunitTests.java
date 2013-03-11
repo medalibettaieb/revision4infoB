@@ -8,6 +8,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -57,6 +59,7 @@ public class UniversityJunitTests {
 
 		proxy.assignProfsToModule(profs, module);
 
+		
 	}
 
 	@Test
