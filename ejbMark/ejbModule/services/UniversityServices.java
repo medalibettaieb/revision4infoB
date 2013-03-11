@@ -52,6 +52,12 @@ public class UniversityServices implements UniversityServicesRemote {
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see services.UniversityServicesRemote#createMark(persistence.Student,
+	 * persistence.Module, java.util.Date, java.lang.String, int)
+	 */
 	@Override
 	public void createMark(Student student, Module module, Date dateOfExam,
 			String type, int mark) {
@@ -94,7 +100,9 @@ public class UniversityServices implements UniversityServicesRemote {
 		return query.getResultList();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see services.UniversityServicesRemote#findstudentById(int)
 	 */
 	@Override

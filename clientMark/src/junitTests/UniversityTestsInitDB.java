@@ -17,6 +17,14 @@ public class UniversityTestsInitDB {
 	private static Context context;
 	private static UniversityServicesRemote proxy;
 
+	/**
+	 * The main method.
+	 * 
+	 * @param args
+	 *            the arguments
+	 * @throws NamingException
+	 *             the naming exception
+	 */
 	public static void main(String[] args) throws NamingException {
 		context = new InitialContext();
 		proxy = (UniversityServicesRemote) context
@@ -47,7 +55,6 @@ public class UniversityTestsInitDB {
 		profs.add(prof3);
 
 		proxy.assignProfsToModule(profs, module);
-		
 
 		proxy.createMark(student, module, new Date(), "ds", 12);
 	}

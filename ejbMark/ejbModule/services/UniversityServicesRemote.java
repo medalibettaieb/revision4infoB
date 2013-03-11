@@ -18,6 +18,11 @@ public interface UniversityServicesRemote {
 
 	void addProf(Prof prof);
 
+	/**
+	 * Delete student.
+	 *
+	 * @param idStudent the id student
+	 */
 	void deleteStudent(int idStudent);
 
 	void deleteProf(int idProf);

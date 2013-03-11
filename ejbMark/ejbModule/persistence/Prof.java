@@ -21,12 +21,15 @@ public class Prof implements Serializable {
 	private Module module;
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Instantiates a new prof.
+	 */
 	public Prof() {
 		super();
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdProf() {
 		return this.idProf;
 	}

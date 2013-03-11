@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -50,11 +48,17 @@ public class Module implements Serializable {
 		return marks;
 	}
 
+	/**
+	 * Sets the marks.
+	 * 
+	 * @param marks
+	 *            the new marks
+	 */
 	public void setMarks(List<Mark> marks) {
 		this.marks = marks;
 	}
 
-	@OneToMany(mappedBy = "module",cascade=CascadeType.MERGE)
+	@OneToMany(mappedBy = "module", cascade = CascadeType.MERGE)
 	public List<Prof> getProfs() {
 		return profs;
 	}

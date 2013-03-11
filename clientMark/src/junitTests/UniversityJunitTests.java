@@ -8,8 +8,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -20,10 +18,23 @@ import persistence.Prof;
 import persistence.Student;
 import services.UniversityServicesRemote;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UniversityJunitTests.
+ */
 public class UniversityJunitTests {
+	
+	/** The context. */
 	private static Context context;
+	
+	/** The proxy. */
 	private static UniversityServicesRemote proxy;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws NamingException the naming exception
+	 */
 	@BeforeClass
 	public static void setUp() throws NamingException {
 		context = new InitialContext();
@@ -31,6 +42,9 @@ public class UniversityJunitTests {
 				.lookup("ejb:/ejbMark/UniversityServices!services.UniversityServicesRemote");
 	}
 
+	/**
+	 * Inits the db.
+	 */
 	@Before
 	public void initDB() {
 		Student student = new Student();
@@ -59,9 +73,11 @@ public class UniversityJunitTests {
 
 		proxy.assignProfsToModule(profs, module);
 
-		
 	}
 
+	/**
+	 * Test assign profs to module.
+	 */
 	@Test
 	@Ignore
 	public void testAssignProfsToModule() {
@@ -86,6 +102,9 @@ public class UniversityJunitTests {
 
 	}
 
+	/**
+	 * Tes ccreate mark.
+	 */
 	@Test
 	@Ignore
 	public void tesCcreateMark() {
